@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="cursor"></div>
+
+    <script>
+        const cursorSize = 20;
+        var style, html, nextID=0;
+        const cursor = document.querySelector('.cursor');
+        const body = document.querySelector('body');
+
+
+        document.addEventListener('mousemove', e=>{9
+
+            html = "<div class='cursor' style='" + style + "' id='cur"+ nextID +"'></div>"
+            style = "top:" + (e.pageY-10) + "px;left:" + (e.pageX-10) + "px;"
+            var id = "cur"+nextID
+            var elem = document.querySelectorAll('.cursor')[0];
+            //cursor.setAttribute("style", "top: " + (e.pageY-cursorSize/2) + "px; left: " + (e.pageX-cursorSize/2) + "px;");
+            body.insertAdjacentHTML('beforeend', html);
+            setTimeout(()=>{
+                elem.remove();
+            },1000);
+            console.log(elem, html);
+            nextID++;
+        });
+
+
+    </script>
+</body>
+</html>
